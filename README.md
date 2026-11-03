@@ -1,57 +1,50 @@
-Nonogram Optimization
+# Nonogram Optimization
 
-A Python project exploring and comparing metaheuristic optimization algorithms for solving Nonogram puzzles.
+A Python-based project exploring metaheuristic optimization algorithms for solving Nonogram puzzles.
 
-The project implements four optimization approaches and provides tools for comparing their performance, analyzing convergence, and evaluating experimental results.
+The project implements and compares several optimization approaches, evaluating their performance in terms of solution quality, execution time, and convergence behavior.
 
-Overview
+## Overview
 
-A Nonogram is a logic puzzle in which cells in a grid must be filled according to numerical clues describing consecutive groups of filled cells in each row and column.
+Nonograms are logic puzzles in which cells in a grid must be filled according to numerical clues provided for each row and column.
 
-This project approaches Nonogram solving as an optimization problem. Candidate solutions are represented as binary grids, and an objective function measures the differences between the blocks extracted from a candidate grid and the provided clues.
+This project approaches Nonogram solving as an optimization problem. Candidate solutions are represented as grids, and an objective function measures the difference between the blocks in a candidate grid and the required clues.
 
-The goal is to minimize the objective function until a valid solution is found.
+The main goal is to investigate how different optimization algorithms perform when searching for valid Nonogram solutions.
 
-Implemented Algorithms
+## Implemented Algorithms
 
-The project includes four metaheuristic algorithms:
+The project includes the following algorithms:
 
-Algorithm
+- **Exhaustive Search** – explores all possible grid configurations to find a valid solution.
+- **Hill Climbing** – iteratively selects the best neighboring solution.
+- **Randomized Hill Climbing** – explores randomly selected neighboring solutions.
+- **Tabu Search** – uses a tabu list to avoid revisiting previously explored solutions.
+- **Simulated Annealing** – uses a probabilistic acceptance mechanism to escape local optima.
 
-Description
+## Project Structure
 
-Classical Hill Climbing
-
-Iteratively selects the best neighboring solution if it improves the objective value.
-
-Randomized Hill Climbing
-
-Randomly selects a neighboring solution and accepts it if it does not worsen the objective value.
-
-Tabu Search
-
-Uses a tabu list to avoid recently visited solutions and explores alternative search paths.
-
-Simulated Annealing
-
-Uses a temperature-based acceptance probability to occasionally accept worse solutions.
-
-An exhaustive search implementation is also included for small problem instances.
-
-Project Structure
-
-MetaheurystykaNonogram/
+```text
+nonogram-optimization/
+│
 ├── data/
 │   └── examples/
+│       ├── small.txt
+│       └── medium.txt
+│
 ├── experiments/
 │   └── benchmark.py
+│
 ├── results/
 │   ├── experiments/
 │   │   ├── convergence_runs.csv
 │   │   └── convergence_summary.csv
+│   │
 │   └── figures/
 │       ├── convergence_iterations.png
-│       └── convergence_normalized.png
+│       ├── convergence_normalized.png
+│       └── ...
+│
 ├── src/
 │   └── nonogram/
 │       ├── algorithms/
@@ -59,204 +52,136 @@ MetaheurystykaNonogram/
 │       │   ├── hill_climbing.py
 │       │   ├── tabu_search.py
 │       │   └── simulated_annealing.py
+│       │
 │       ├── __init__.py
-│       ├── comparison.py
-│       ├── convergence.py
 │       ├── main.py
-│       ├── neighborhood.py
+│       ├── puzzle.py
 │       ├── objective.py
-│       └── puzzle.py
+│       ├── neighborhood.py
+│       ├── comparison.py
+│       └── convergence.py
+│
 ├── tests/
 ├── .gitignore
 ├── pyproject.toml
 └── README.md
+```
 
-Installation
+## Technologies
 
-Python 3.10 or newer is required.
+- Python 3.13
+- NumPy
+- Matplotlib
+- pytest
+- Git
+
+## Installation
 
 Clone the repository:
 
-git clone https://github.com/s29602-pj/MetaheurstykaNonogram.git
-cd MetaheurstykaNonogram
+```bash
+git clone https://github.com/Bartosz-Dembowski/nonogram-optimization.git
+cd nonogram-optimization
+```
 
 Create and activate a virtual environment:
 
+```bash
 python -m venv .venv
+```
 
-On Windows:
+Windows:
 
-.venv\Scripts\activate
+```powershell
+.venv\Scripts\Activate.ps1
+```
 
-Install the required dependencies:
+Install the project and development dependencies:
 
-python -m pip install numpy matplotlib pytest
-python -m pip install -e .
+```bash
+python -m pip install -e ".[dev]"
+```
 
-Usage
+## Running the Project
 
-Run the application:
+The application can be launched through the main module:
 
+```bash
 python -m nonogram.main
+```
 
-The application accepts puzzle data interactively.
+To use a predefined puzzle, provide an input file:
 
-The input consists of four lines:
+```bash
+python -m nonogram.main --input data/examples/small.txt
+```
 
-Grid width
+The application supports the following algorithm selection options:
 
-Grid height
+- `all`
+- `exhaustive`
+- `hill-climbing`
+- `randomized-hill-climbing`
+- `tabu`
+- `simulated-annealing`
+- `convergence`
 
-Column clues
+For convergence experiments, the number of runs can be specified using:
 
-Row clues
-
-You can also provide an input file:
-
-python -m nonogram.main --input data/examples/medium.txt
-
-Selecting an Algorithm
-
-Run all algorithms:
-
-python -m nonogram.main --algorithm all
-
-Run a specific algorithm:
-
-python -m nonogram.main --algorithm hill-climbing
-
-Available options:
-
-all
-exhaustive
-hill-climbing
-randomized-hill-climbing
-tabu
-simulated-annealing
-convergence
-
-Additional parameters are available:
-
-python -m nonogram.main --algorithm tabu --max-iterations 1000 --tabu-size 30
-
-For Simulated Annealing:
-
-python -m nonogram.main --algorithm simulated-annealing --initial-temperature 100 --final-temperature 0.1 --cooling-rate 0.95
-
-Note: Exhaustive search is computationally expensive and is intended for small puzzle instances.
-
-Convergence Experiments
-
-The project includes an experimental module for analyzing the convergence behavior of the four metaheuristic algorithms.
-
-Run an experiment with 30 independent starting grids:
-
+```bash
 python -m nonogram.main --algorithm convergence --number-of-runs 30
+```
 
-Each run generates a new random starting grid. All four algorithms receive the same starting grid within a given run, allowing a more consistent comparison.
+## Experiments and Results
 
-Two convergence plots are generated:
+The project includes experiments comparing the convergence behavior and performance of the implemented algorithms.
 
-results/figures/convergence_iterations.png – objective function value versus the number of iterations.
+The benchmark evaluated all four metaheuristic algorithms using 30 independent runs. Each run used a different randomly generated starting grid, shared by all algorithms within that run.
 
-results/figures/convergence_normalized.png – objective function value versus normalized progress.
+### Benchmark Results
 
-Experimental results are exported to CSV:
+| Algorithm | Success Rate | Average Error | Average Iterations | Average Execution Time |
+|---|---:|---:|---:|---:|
+| Classical Hill Climbing | 0.00% | 4.70 | 6.73 | 0.0034 s |
+| Randomized Hill Climbing | 26.67% | 1.47 | 7,417.27 | 2.0510 s |
+| Tabu Search | **93.33%** | **0.13** | 92.10 | 0.0487 s |
+| Simulated Annealing | 0.00% | 4.77 | 135.00 | 0.0386 s |
 
-results/experiments/convergence_runs.csv – individual run results.
+### Key Findings
 
-results/experiments/convergence_summary.csv – aggregated statistics.
+- Tabu Search achieved the highest success rate, solving 28 out of 30 runs.
+- Randomized Hill Climbing solved 8 out of 30 runs but required significantly more iterations and execution time.
+- Classical Hill Climbing frequently became trapped in local optima.
+- Simulated Annealing did not find a valid solution in the tested configuration.
 
-Experimental Results
+**Conclusion:** Tabu Search achieved the best overall performance in the tested experimental configuration.
 
-The following results were obtained from 30 runs using different random starting grids for the same test puzzle.
+These results are specific to one puzzle instance and the selected algorithm parameters. They should not be interpreted as a general ranking across all Nonogram puzzles.
 
-Algorithm
+### Convergence Visualization
 
-Success Rate
+The project generates convergence plots to compare how the algorithms improve their solutions over time.
 
-Average Error
+Generated figures are stored in `results/figures/`.
 
-Average Time (s)
+## Running Tests
 
-Classical Hill Climbing
+Run the test suite using:
 
-0.00%
-
-4.70
-
-0.003438
-
-Randomized Hill Climbing
-
-26.67%
-
-1.47
-
-2.050979
-
-Tabu Search
-
-93.33%
-
-0.13
-
-0.048708
-
-Simulated Annealing
-
-0.00%
-
-4.77
-
-0.038610
-
-Results Interpretation
-
-Tabu Search achieved the highest success rate, solving 28 out of 30 runs.
-
-Randomized Hill Climbing solved 8 out of 30 runs, but required substantially more iterations and execution time on average.
-
-Classical Hill Climbing and Simulated Annealing did not find a complete solution in these experiments.
-
-These results are specific to the tested puzzle and experimental configuration. They should not be interpreted as a general ranking of the algorithms across all Nonogram instances.
-
-Testing
-
-The project uses pytest for automated testing.
-
-Run the test suite:
-
+```bash
 python -m pytest -v
+```
 
-The current test suite contains 41 tests covering the objective function, neighborhood generation, puzzle handling, optimization algorithms, and convergence utilities.
+The project includes unit tests covering the objective function, puzzle handling, neighborhood generation, optimization algorithms, and convergence functionality.
 
-Technologies
+## Project Background
 
-Python
+This project was originally developed as part of a university coursework assignment.
 
-NumPy
+After completing the academic project, I continued working on it independently, focusing on code refactoring, improving project structure, introducing modular architecture, expanding automated tests, and preparing the codebase for further development.
 
-Matplotlib
+The current repository represents a reorganized and improved version of the original academic project.
 
-pytest
+## License
 
-setuptools
-
-Project Goals
-
-The main goals of this project are:
-
-Implementing different metaheuristic optimization algorithms.
-
-Comparing their performance on Nonogram puzzles.
-
-Analyzing convergence behavior.
-
-Collecting and evaluating experimental results.
-
-Practicing software modularity, testing, and documentation.
-
-License
-
-No license has been specified yet.
+No license has been specified for this project yet.
