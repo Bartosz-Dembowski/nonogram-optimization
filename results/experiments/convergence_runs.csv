@@ -1,0 +1,121 @@
+algorithm,run,final_error,iterations,execution_time_seconds,success
+Classical Hill Climbing,1,4,5,0.002549,False
+Classical Hill Climbing,2,7,5,0.00249,False
+Classical Hill Climbing,3,6,6,0.003445,False
+Classical Hill Climbing,4,4,9,0.004376,False
+Classical Hill Climbing,5,4,6,0.002962,False
+Classical Hill Climbing,6,5,5,0.002467,False
+Classical Hill Climbing,7,8,8,0.003992,False
+Classical Hill Climbing,8,4,10,0.004918,False
+Classical Hill Climbing,9,6,5,0.002494,False
+Classical Hill Climbing,10,4,7,0.003443,False
+Classical Hill Climbing,11,3,7,0.003457,False
+Classical Hill Climbing,12,5,4,0.001948,False
+Classical Hill Climbing,13,6,4,0.002006,False
+Classical Hill Climbing,14,4,6,0.002944,False
+Classical Hill Climbing,15,5,7,0.003469,False
+Classical Hill Climbing,16,4,9,0.004684,False
+Classical Hill Climbing,17,5,10,0.005003,False
+Classical Hill Climbing,18,4,6,0.002945,False
+Classical Hill Climbing,19,7,6,0.002933,False
+Classical Hill Climbing,20,4,10,0.004903,False
+Classical Hill Climbing,21,4,5,0.002455,False
+Classical Hill Climbing,22,4,10,0.004971,False
+Classical Hill Climbing,23,4,6,0.002959,False
+Classical Hill Climbing,24,4,6,0.002993,False
+Classical Hill Climbing,25,3,5,0.002441,False
+Classical Hill Climbing,26,5,7,0.003419,False
+Classical Hill Climbing,27,4,8,0.003922,False
+Classical Hill Climbing,28,4,9,0.004466,False
+Classical Hill Climbing,29,4,5,0.002474,False
+Classical Hill Climbing,30,6,6,0.005616,False
+Randomized Hill Climbing,1,2,10000,2.744526,False
+Randomized Hill Climbing,2,0,409,0.113726,True
+Randomized Hill Climbing,3,2,10000,2.769807,False
+Randomized Hill Climbing,4,2,10000,2.70524,False
+Randomized Hill Climbing,5,0,282,0.077178,True
+Randomized Hill Climbing,6,2,10000,2.743426,False
+Randomized Hill Climbing,7,2,10000,2.813859,False
+Randomized Hill Climbing,8,0,450,0.125348,True
+Randomized Hill Climbing,9,2,10000,2.756203,False
+Randomized Hill Climbing,10,2,10000,2.73941,False
+Randomized Hill Climbing,11,2,10000,2.749272,False
+Randomized Hill Climbing,12,2,10000,2.757012,False
+Randomized Hill Climbing,13,2,10000,2.764175,False
+Randomized Hill Climbing,14,2,10000,2.748248,False
+Randomized Hill Climbing,15,0,171,0.047085,True
+Randomized Hill Climbing,16,2,10000,2.764557,False
+Randomized Hill Climbing,17,2,10000,2.760207,False
+Randomized Hill Climbing,18,0,141,0.039025,True
+Randomized Hill Climbing,19,2,10000,2.724012,False
+Randomized Hill Climbing,20,0,338,0.093201,True
+Randomized Hill Climbing,21,0,298,0.082251,True
+Randomized Hill Climbing,22,2,10000,2.725353,False
+Randomized Hill Climbing,23,2,10000,2.76179,False
+Randomized Hill Climbing,24,2,10000,2.752843,False
+Randomized Hill Climbing,25,0,429,0.118211,True
+Randomized Hill Climbing,26,2,10000,2.741754,False
+Randomized Hill Climbing,27,2,10000,2.751648,False
+Randomized Hill Climbing,28,2,10000,2.741636,False
+Randomized Hill Climbing,29,2,10000,2.760168,False
+Randomized Hill Climbing,30,2,10000,3.058186,False
+Tabu Search,1,0,8,0.004667,True
+Tabu Search,2,0,40,0.020509,True
+Tabu Search,3,0,12,0.00622,True
+Tabu Search,4,0,22,0.011399,True
+Tabu Search,5,0,15,0.007721,True
+Tabu Search,6,0,32,0.016428,True
+Tabu Search,7,0,30,0.015513,True
+Tabu Search,8,0,29,0.015348,True
+Tabu Search,9,0,22,0.011569,True
+Tabu Search,10,0,15,0.00774,True
+Tabu Search,11,0,15,0.007727,True
+Tabu Search,12,0,20,0.010143,True
+Tabu Search,13,0,29,0.014745,True
+Tabu Search,14,0,15,0.007741,True
+Tabu Search,15,2,1000,0.524373,False
+Tabu Search,16,0,25,0.012796,True
+Tabu Search,17,0,33,0.017179,True
+Tabu Search,18,0,17,0.008674,True
+Tabu Search,19,0,35,0.017914,True
+Tabu Search,20,0,38,0.020219,True
+Tabu Search,21,0,52,0.026778,True
+Tabu Search,22,0,20,0.010431,True
+Tabu Search,23,2,1000,0.521269,False
+Tabu Search,24,0,47,0.025623,True
+Tabu Search,25,0,19,0.009696,True
+Tabu Search,26,0,20,0.010213,True
+Tabu Search,27,0,23,0.011723,True
+Tabu Search,28,0,30,0.0154,True
+Tabu Search,29,0,56,0.04906,True
+Tabu Search,30,0,44,0.022428,True
+Simulated Annealing,1,4,135,0.038222,False
+Simulated Annealing,2,3,135,0.037842,False
+Simulated Annealing,3,2,135,0.03734,False
+Simulated Annealing,4,6,135,0.037698,False
+Simulated Annealing,5,4,135,0.037362,False
+Simulated Annealing,6,7,135,0.037446,False
+Simulated Annealing,7,5,135,0.037387,False
+Simulated Annealing,8,4,135,0.037633,False
+Simulated Annealing,9,6,135,0.037678,False
+Simulated Annealing,10,5,135,0.037395,False
+Simulated Annealing,11,5,135,0.037403,False
+Simulated Annealing,12,4,135,0.037452,False
+Simulated Annealing,13,3,135,0.037437,False
+Simulated Annealing,14,5,135,0.037279,False
+Simulated Annealing,15,7,135,0.037822,False
+Simulated Annealing,16,5,135,0.037454,False
+Simulated Annealing,17,5,135,0.03751,False
+Simulated Annealing,18,5,135,0.03744,False
+Simulated Annealing,19,5,135,0.037451,False
+Simulated Annealing,20,5,135,0.037576,False
+Simulated Annealing,21,4,135,0.037396,False
+Simulated Annealing,22,5,135,0.037921,False
+Simulated Annealing,23,5,135,0.037734,False
+Simulated Annealing,24,2,135,0.037656,False
+Simulated Annealing,25,5,135,0.037392,False
+Simulated Annealing,26,8,135,0.037542,False
+Simulated Annealing,27,4,135,0.037365,False
+Simulated Annealing,28,5,135,0.037521,False
+Simulated Annealing,29,5,135,0.069676,False
+Simulated Annealing,30,5,135,0.037263,False

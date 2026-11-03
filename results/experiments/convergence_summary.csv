@@ -1,0 +1,5 @@
+algorithm,number_of_runs,success_rate_percent,average_error,best_error,worst_error,average_iterations,average_execution_time_seconds
+Classical Hill Climbing,30,0.0,4.7,3,8,6.73,0.003438
+Randomized Hill Climbing,30,26.67,1.4667,0,2,7417.27,2.050979
+Tabu Search,30,93.33,0.1333,0,2,92.1,0.048708
+Simulated Annealing,30,0.0,4.7667,2,8,135,0.03861
