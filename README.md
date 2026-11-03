@@ -147,6 +147,10 @@ The benchmark evaluated all four metaheuristic algorithms using 30 independent r
 | Tabu Search | **93.33%** | **0.13** | 92.10 | 0.0487 s |
 | Simulated Annealing | 0.00% | 4.77 | 135.00 | 0.0386 s |
 
+![Convergence by iteration](results/figures/convergence_iterations.png)
+
+![Normalized convergence comparison](results/figures/convergence_normalized.png)
+
 ### Key Findings
 
 - Tabu Search achieved the highest success rate, solving 28 out of 30 runs.
